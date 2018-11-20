@@ -50,3 +50,17 @@ ax.set_title('1c')
 plt.savefig("week6_1c.pdf")
 plt.show()
 
+# 2
+
+x = np.arange(-1.5, 1.5, delta)
+y = np.arange(-1.5, 1.5, delta)
+X, Y = np.meshgrid(x, y)
+Z = 2 * X * Y
+constraint = X*X + Y*Y
+fig, ax = plt.subplots()
+CS = ax.contour(X, Y, Z, 30)
+CS = ax.contour(X, Y, constraint, [1])
+plt.axis('equal')
+ax.set_title('1c')
+plt.savefig("week6_2.pdf")
+plt.show()
