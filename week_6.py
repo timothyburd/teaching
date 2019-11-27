@@ -53,3 +53,20 @@ ax.clabel(CS, inline=1, fontsize=10)
 ax.set_title('1c')
 plt.savefig("week6_1c.pdf")
 plt.show()
+
+# 4
+num_pnts = 1000
+theta = np.linspace(-np.pi,np.pi,num_pnts)
+cos_theta = np.cos(theta)
+sin_theta = np.sin(theta)
+quad_soln = lambda a,b,c: (-b+np.sqrt(b*b-4*a*c))/(2*a)
+r = quad_soln(cos_theta**2+4*sin_theta**2,-2*cos_theta,-3)
+fig, ax = plt.subplots()
+ax.plot(theta/np.pi,r)
+ax.set_title('4')
+ax.set_xlabel(r'$\theta$ / $\pi$')
+ax.set_ylabel(r'$r$')
+plt.savefig("week6_4.pdf")
+plt.show()
+
+
